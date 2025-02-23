@@ -1,0 +1,15 @@
+Welcome Reliance Retail
+
+Bill Number: 3643
+Customer Name: venky
+Phone Number: 6302996446
+======================================
+ Products		QTY		Price
+======================================
+ laptop 		1		40000
+ Spray		1		180
+ Daal		1		60
+--------------------------------------
+ Cosmetic Tax			Rs. 2009.0
+ Grocery Tax			Rs. 6.0
+--------------------------------------

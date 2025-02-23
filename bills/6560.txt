@@ -1,0 +1,32 @@
+Welcome Reliance Retail
+
+Bill Number: 6560
+Customer Name: venky
+Phone Number: 6302996446
+======================================
+ Products		QTY		Price
+======================================
+ samsung 		1		10000
+ apple 		1		50000
+ oneplus		1		20000
+ xiaomi 		1		10000
+ Realme 		1		15000
+ vivo 		1		20000
+ DELL 		1		40000
+ HP 		1		75000
+ LENOVO 		1		160000
+ MACBOOK 		1		60000
+ ASUS 		1		80000
+ ACER 		1		50000
+ POWER BANK 		1		2000
+ EARBUDS		1		1600
+ MOBILE CASE 		1		500
+ SSD 		1		5000
+ COOLING PAD 		1		4000
+ WIRELESS MOUSE 		1		500
+--------------------------------------
+ Cosmetic Tax			Rs. 6250.0
+ Grocery Tax			Rs. 46500.0
+ CoolDrink Tax			Rs. 680.0
+ Total Bill 			 Rs. 657030.0
+--------------------------------------
