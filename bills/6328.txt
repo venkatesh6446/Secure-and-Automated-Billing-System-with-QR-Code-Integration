@@ -1,0 +1,20 @@
+Welcome Reliance Retail
+
+Bill Number: 6328
+Customer Name: giridhar 
+Phone Number: 9989384635
+======================================
+ Products		QTY		Price
+======================================
+ samsung 		1		10000
+ vivo 		1		20000
+ LENOVO 		2		160000
+ MACBOOK 		1		120000
+ MOBILE CASE 		1		500
+ SSD 		1		5000
+--------------------------------------
+ MobilePhone tax			Rs. 1500.0
+ Laptop Tax			Rs. 28000.0
+ Accessories Tax			Rs. 275.0
+ Total Bill 			 Rs. 345275.0
+--------------------------------------

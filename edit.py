@@ -582,13 +582,99 @@ generate_pdf()
 
 
 
+#-------------------------------sending eamil---------------------------------
+import smtplib
+import ssl
+import os
+from email.message import EmailMessage
+from dotenv import load_dotenv
+
+# Load environment variables with override
+load_dotenv(override=True)
+
+# Get credentials securely from .env file
+EMAIL_SENDER = os.getenv("EMAIL_SENDER")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
+EMAIL_RECEIVER = "giridharchindam@gmail.com"  # Customer email-----------------------
+
+# Check if credentials are loaded
+if not EMAIL_SENDER or not EMAIL_PASSWORD:
+    print("❌ ERROR: Missing EMAIL_SENDER or EMAIL_PASSWORD. Check your .env file.")
+    exit()
+
+# Directory where PDFs are stored
+BILLS_DIR = r"C:\Users\lakka\OneDrive\Desktop\TECH PRODUCTS\bills"
+
+# Function to get the latest PDF file
+def get_latest_pdf(directory):
+    pdf_files = [f for f in os.listdir(directory) if f.endswith(".pdf")]
+    if not pdf_files:
+        print("❌ No PDF files found!")
+        return None
+    latest_file = max(pdf_files, key=lambda f: os.path.getctime(os.path.join(directory, f)))
+    return os.path.join(directory, latest_file)
+
+# Get the latest PDF file
+PDF_PATH = get_latest_pdf(BILLS_DIR)
+
+if PDF_PATH is None:
+    print("❌ No latest PDF found. Exiting.")
+    exit()
+
+# Email content
+subject = "Your Bill - TECH PRODUCTS"
+body = "Dear Customer,\n\nPlease find your bill attached.\n\nThank you!"
+
+# Create EmailMessage object
+msg = EmailMessage()
+msg["From"] = EMAIL_SENDER
+msg["To"] = EMAIL_RECEIVER
+msg["Subject"] = subject
+msg.set_content(body)
+
+# Attach the latest PDF
+with open(PDF_PATH, "rb") as f:
+    msg.add_attachment(f.read(), maintype="application", subtype="pdf", filename=os.path.basename(PDF_PATH))
+
+# Connect to SMTP server and send email
+try:
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+        print("✅ Connecting to SMTP server...")
+        server.login(EMAIL_SENDER, EMAIL_PASSWORD)
+        print("✅ Logged in successfully!")
+        server.send_message(msg)
+    print(f"✅ Email sent successfully with attachment: {PDF_PATH}")
+except smtplib.SMTPAuthenticationError:
+    print("❌ ERROR: Authentication failed. Check your email & app password.")
+except Exception as e:
+    print(f"❌ Error sending email: {e}")
+
 root = Tk()
 obj = Bill_App(root)
 root.mainloop()
 
 
 
+
+
+
+
+
+
+
+
+
+
 #---------------End of the code -------------------------------------
+
+
+
+
+#zkht xskx fysl olbl
+
+
+
 
 
 
