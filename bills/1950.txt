@@ -1,0 +1,18 @@
+Welcome Reliance Retail
+
+Bill Number: 1950
+Customer Name: rushi
+Phone Number: 6940524460
+======================================
+ Products		QTY		Price
+======================================
+ samsung 		1		10000
+ xiaomi 		1		10000
+ MACBOOK 		1		0
+ MOBILE CASE 		2		1000
+--------------------------------------
+ Mobile Phone tax			Rs. 1000.0
+ Laptop Tax			Rs. 16000.0
+ Accessories Tax			Rs. 50.0
+ Total Bill 			 Rs. 198050.0
+--------------------------------------

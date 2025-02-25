@@ -1,0 +1,17 @@
+Welcome Reliance Retail
+
+Bill Number: 6239
+Customer Name: venky
+Phone Number: 6302996446
+======================================
+ Products		QTY		Price
+======================================
+ samsung 		1		10000
+ MACBOOK 		2		0
+ SSD 		1		5000
+--------------------------------------
+ Cosmetic Tax			Rs. 500.0
+ Grocery Tax			Rs. 32000.0
+ CoolDrink Tax			Rs. 250.0
+ Total Bill 			 Rs. 367750.0
+--------------------------------------
