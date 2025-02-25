@@ -484,7 +484,7 @@ root = Tk()
 obj = Bill_App(root)
 root.mainloop()
 
-v
+
 
 #---------------End of the code -------------------------------------
 
