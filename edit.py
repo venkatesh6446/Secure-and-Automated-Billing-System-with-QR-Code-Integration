@@ -303,7 +303,7 @@ class Bill_App:
     
             self.textarea.insert(END,f"\n--------------------------------------")
             if self.cosmetic_tax.get()!="Rs. 0.0":
-                self.textarea.insert(END,f"\n Mobile Phone tax\t\t\t{self.cosmetic_tax.get()}")
+                self.textarea.insert(END,f"\n MobilePhone tax\t\t\t{self.cosmetic_tax.get()}")
             if self.grocery_tax.get()!="Rs. 0.0":
                 self.textarea.insert(END,f"\n Laptop Tax\t\t\t{self.grocery_tax.get()}")
             if self.cold_drink_tax.get()!="Rs. 0.0":
