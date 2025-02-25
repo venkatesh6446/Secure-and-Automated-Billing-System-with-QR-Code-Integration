@@ -478,6 +478,108 @@ generate_qr_code_for_latest_bill()
 
 
 
+#--------------------------pdf genration------------------------
+import os
+import qrcode
+from fpdf import FPDF
+from PIL import Image
+
+# Define the path for the bills
+bills_directory = r"C:\Users\lakka\OneDrive\Desktop\TECH PRODUCTS\bills"
+
+# Get the latest bill file
+def get_latest_file(directory, extension):
+    try:
+        files = [f for f in os.listdir(directory) if f.endswith(extension)]
+        if not files:
+            print(f"No {extension} files found in {directory}.")
+            return None
+        return max(files, key=lambda f: os.path.getmtime(os.path.join(directory, f)))
+    except FileNotFoundError:
+        print(f"Directory not found: {directory}")
+        return None
+
+# Generate QR Code
+def generate_qr_code(data, qr_path):
+    qr = qrcode.QRCode(box_size=10, border=4)
+    qr.add_data(data)
+    qr.make(fit=True)
+    img = qr.make_image(fill="black", back_color="white")
+    img.save(qr_path)
+    return qr_path
+
+# Generate the PDF with enhanced formatting
+def generate_pdf():
+    latest_bill = get_latest_file(bills_directory, ".txt")
+    if not latest_bill:
+        return
+    
+    bill_path = os.path.join(bills_directory, latest_bill)
+    try:
+        with open(bill_path, "r", encoding="utf-8") as file:
+            bill_content = file.read()
+    except FileNotFoundError:
+        print(f"Bill file not found: {bill_path}")
+        return
+
+    # Define paths
+    pdf_path = os.path.join(bills_directory, f"{os.path.splitext(latest_bill)[0]}_bill.pdf")
+    qr_path = os.path.join(bills_directory, f"{os.path.splitext(latest_bill)[0]}_qr.png")
+    
+    # Generate QR Code
+    generate_qr_code(bill_content, qr_path)
+
+    # Create PDF
+    pdf = FPDF()
+    pdf.add_page()
+    
+    # Set background color
+    pdf.set_fill_color(240, 240, 240)  # Light Gray
+    pdf.rect(0, 0, 210, 297, 'F')  # Fill entire page
+
+    # Draw a border
+    pdf.set_line_width(1)
+    pdf.set_draw_color(0, 0, 0)  # Black border
+    pdf.rect(10, 10, 190, 277)
+
+    # Set font for bill heading
+    pdf.set_font("Arial", "B", 16)
+    pdf.set_text_color(0, 0, 128)  # Navy Blue
+    pdf.cell(190, 10, "Customer Bill", ln=True, align="C")
+    pdf.ln(10)
+
+    # Set font for bill content
+    pdf.set_font("Arial", size=12)
+    pdf.set_text_color(0, 0, 0)  # Black
+
+    # Add bill content, properly aligned
+    pdf.set_x(10)
+    pdf.multi_cell(190, 8, bill_content, align="L")  # Left aligned
+    pdf.ln(10)
+
+    # Draw QR Code Box
+    pdf.set_line_width(1)
+    pdf.set_draw_color(50, 50, 50)  # Dark Gray
+    pdf.rect(75, 190, 60, 60)  # Box for QR code
+
+    # Add QR Code if it exists
+    if os.path.exists(qr_path):
+        pdf.image(qr_path, x=80, y=195, w=50, h=50)  # QR inside the box
+
+    # Display message below QR Code
+    pdf.set_font("Arial", "B", 12)
+    pdf.set_text_color(255, 0, 0)  # Red
+    pdf.set_xy(10, 260)
+    pdf.cell(190, 10, "SCAN QR TO SEE BILL DETAILS", ln=True, align="C")
+
+    # Save PDF
+    pdf.output(pdf_path)
+    print(f"PDF generated at: {pdf_path}")
+
+# Call the function to generate the formatted PDF
+generate_pdf()
+
+
 
 
 root = Tk()
