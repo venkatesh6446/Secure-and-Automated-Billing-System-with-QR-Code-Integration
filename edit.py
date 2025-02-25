@@ -391,6 +391,95 @@ class Bill_App:
         
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#--------------------------------------qr genration ---------------------------
+import qrcode
+import os
+import time
+import traceback
+
+# Function to generate QR code for the most recently generated bill
+def generate_qr_code_for_latest_bill():
+    try:
+        # Define the path for the bills and QR codes
+        bills_directory = r"C:\Users\lakka\OneDrive\Desktop\TECH PRODUCTS\bills"
+        
+        # Get the list of all files in the directory
+        files = os.listdir(bills_directory)
+        print("Files in bills directory:", files)  # Debug: Check if the files are listed correctly
+        
+        # Filter out files that are not .txt (assuming bills are saved in .txt format)
+        bill_files = [f for f in files if f.endswith('.txt')]
+        print("Bill files found:", bill_files)  # Debug: Check which files are selected as bills
+        
+        # Check if there are any bill files
+        if not bill_files:
+            print("No bill files found in the directory.")
+            return
+        
+        # Find the most recently modified bill file
+        latest_bill_file = max(bill_files, key=lambda f: os.path.getmtime(os.path.join(bills_directory, f)))
+        print(f"Latest bill file: {latest_bill_file}")  # Debug: Check if correct file is selected
+        
+        # Full path of the most recently modified bill file
+        bill_file_path = os.path.join(bills_directory, latest_bill_file)
+        
+        # Read the bill details from the text file
+        with open(bill_file_path, 'r') as bill_file:
+            bill_details = bill_file.read()
+        
+        # Print the bill details for debugging
+        print(f"Bill Details:\n{bill_details}")
+        
+        # Create a QR code from the bill details
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_L,
+            box_size=10,
+            border=4,
+        )
+        qr.add_data(bill_details)
+        qr.make(fit=True)
+
+        # Generate the QR code image
+        img = qr.make_image(fill='black', back_color='white')
+
+        # Save the QR code image in the same directory as the bill
+        qr_code_file_name = f"{os.path.splitext(latest_bill_file)[0]}_qr.png"  # QR code will have the same name as the bill file
+        qr_code_path = os.path.join(bills_directory, qr_code_file_name)
+        
+        # Save the image
+        img.save(qr_code_path)
+        print(f"QR Code generated and saved to {qr_code_path}")
+    
+    except Exception as e:
+        print(f"Error generating QR Code: {e}")
+        traceback.print_exc()  # Print the detailed traceback for error diagnostics
+
+# Call the function to automatically find the latest bill and generate QR code
+generate_qr_code_for_latest_bill()
+
+
+
+
+
+
+
+
 root = Tk()
 obj = Bill_App(root)
 root.mainloop()
@@ -402,42 +491,4 @@ root.mainloop()
 
 
 
-#--------------------------qe genratio
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
+#--------------------------qe genration ---------------------

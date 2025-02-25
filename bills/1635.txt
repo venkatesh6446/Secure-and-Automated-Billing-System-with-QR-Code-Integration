@@ -1,0 +1,17 @@
+Welcome Reliance Retail
+
+Bill Number: 1635
+Customer Name: anu
+Phone Number: 626226648163
+======================================
+ Products		QTY		Price
+======================================
+ samsung 		1		10000
+ MACBOOK 		1		0
+ COOLING PAD 		1		4000
+--------------------------------------
+ MobilePhone tax			Rs. 500.0
+ Laptop Tax			Rs. 16000.0
+ Accessories Tax			Rs. 200.0
+ Total Bill 			 Rs. 190700.0
+--------------------------------------
