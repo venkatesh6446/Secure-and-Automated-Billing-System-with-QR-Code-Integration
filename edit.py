@@ -239,7 +239,7 @@ class Bill_App:
     
     def welcome_bill(self):
         self.textarea.delete('1.0',END)
-        self.textarea.insert(END,"\tWelcome Reliance Retail\n")
+        self.textarea.insert(END,"\tWelcome To Bajaj Electronics\n")
         self.textarea.insert(END,f"\nBill Number: {self.bill_no.get()}")  
         self.textarea.insert(END,f"\nCustomer Name: {self.c_name.get()}")
         self.textarea.insert(END,f"\nPhone Number: {self.c_phon.get()}")
@@ -389,18 +389,6 @@ class Bill_App:
         if op>0:
             self.root.destory()
         
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -595,7 +583,7 @@ load_dotenv(override=True)
 # Get credentials securely from .env file
 EMAIL_SENDER = os.getenv("EMAIL_SENDER")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
-EMAIL_RECEIVER = "giridharchindam@gmail.com"  # Customer email-----------------------
+EMAIL_RECEIVER = "giridharchindam@gmail.com"  # Customer email--------------------------------------------------
 
 # Check if credentials are loaded
 if not EMAIL_SENDER or not EMAIL_PASSWORD:

@@ -1,0 +1,18 @@
+Welcome To Bajaj Electronics
+
+Bill Number: 1637
+Customer Name: venky
+Phone Number: 6302996446
+======================================
+ Products		QTY		Price
+======================================
+ samsung 		1		10000
+ oneplus		2		40000
+ LENOVO 		1		0
+ MOBILE CASE 		1		500
+--------------------------------------
+ MobilePhone tax			Rs. 2500.0
+ Laptop Tax			Rs. 6000.0
+ Accessories Tax			Rs. 25.0
+ Total Bill 			 Rs. 119025.0
+--------------------------------------
