@@ -583,7 +583,7 @@ load_dotenv(override=True)
 # Get credentials securely from .env file
 EMAIL_SENDER = os.getenv("EMAIL_SENDER")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
-EMAIL_RECEIVER = "giridharchindam@gmail.com"  # Customer email--------------------------------------------------
+EMAIL_RECEIVER = "22311a05x9@cse.sreenidhi.edu.in"  # Customer email--------------------------------------------------
 
 # Check if credentials are loaded
 if not EMAIL_SENDER or not EMAIL_PASSWORD:

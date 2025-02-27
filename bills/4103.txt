@@ -1,0 +1,17 @@
+Welcome To Bajaj Electronics
+
+Bill Number: 4103
+Customer Name: pavan
+Phone Number: 16584649
+======================================
+ Products		QTY		Price
+======================================
+ samsung 		1		10000
+ ASUS 		2		160000
+ SSD 		2		10000
+--------------------------------------
+ MobilePhone tax			Rs. 500.0
+ Laptop Tax			Rs. 16000.0
+ Accessories Tax			Rs. 500.0
+ Total Bill 			 Rs. 197000.0
+--------------------------------------

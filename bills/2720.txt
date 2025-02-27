@@ -1,0 +1,18 @@
+Welcome To Bajaj Electronics
+
+Bill Number: 2720
+Customer Name: venky
+Phone Number: 630299644
+======================================
+ Products		QTY		Price
+======================================
+ samsung 		1		10000
+ Realme 		1		15000
+ HP 		1		75000
+ COOLING PAD 		1		4000
+--------------------------------------
+ MobilePhone tax			Rs. 1250.0
+ Laptop Tax			Rs. 7500.0
+ Accessories Tax			Rs. 200.0
+ Total Bill 			 Rs. 112950.0
+--------------------------------------
