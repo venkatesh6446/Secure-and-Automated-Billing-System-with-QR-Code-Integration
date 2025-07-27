@@ -44,3 +44,4 @@
 
 
 5----📸 Screenshot Interface Preview of the Smart Billing System
+![image alt](https://github.com/venkatesh6446/Secure-and-Automated-Billing-System-with-QR-Code-Integration/blob/350dc53b2525dfe34badb12587310f551b5f662c/Smart_Billing_UI_Overview.png.png)
